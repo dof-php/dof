@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+
+if ($console ?? false) {
+    exit('ReIncludedSelf');
+}
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+ini_set('log_errors', 'php.errors');
+
+$load = function ($_root, bool $__root = false) use (&$root, &$argv) {
+    if ($root && is_string($root) && is_dir($root)) {
+        $_root = $root = realpath($root);
+        if ($__root) {
+            unset($argv[1], $argv[2]);
+            $argv = array_values($argv);
+        }
+    }
+    $loader = join(DIRECTORY_SEPARATOR, [$_root, 'vendor', 'autoload.php']);
+    if (is_file($loader)) {
+        $root = $_root;
+        return $loader;
+    }
+    return false;
+};
+
+$root = (($argv[1] ?? '') === '--set-root') ? ($argv[2] ?? null) : null;
+
+($loader = ($load($root, true) ?: ($load(getcwd()) ?: $load(__DIR__))))
+? require_once $loader
+: exit('ComposerAutoloaderNotFound');
+
+unset($load, $loader);
+
+\Dof\Framework\Cli\Kernel::handle($root, $argv);

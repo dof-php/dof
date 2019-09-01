@@ -1,0 +1,24 @@
+{
+    "name": "dof-php/dof",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dof-php",
+            "email": "me@dof.php"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "dof-php/framework": "v0.1.7.14"
+    },
+    "autoload": {
+        "psr-4": {
+            "Domain\\": "domain/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "repositories": {
+    }
+}
