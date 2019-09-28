@@ -10,14 +10,14 @@
     ],
     "require": {
         "php": "^7.1",
-        "dof-php/framework": "v0.1.7.14"
+        "dof-php/framework": "dev-1.0.0-alpha"
     },
     "autoload": {
         "psr-4": {
             "Domain\\": "domain/"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": {
     }
