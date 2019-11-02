@@ -1,5 +1,6 @@
 {
     "name": "dof-php/dof",
+    "description": "The DOF PHP framework",
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -9,16 +10,34 @@
         }
     ],
     "require": {
-        "php": "^7.1",
-        "dof-php/framework": "dev-1.0.0-alpha"
+        "php": "^7.3",
+        "dof-php/http": "dev-master",
+        "dof-php/cli": "dev-master"
+    },
+    "require-dev": {
+        "dof-php/testing": "dev-master",
+        "dof-php/doc-generator": "dev-master"
     },
     "autoload": {
         "psr-4": {
-            "Domain\\": "domain/"
+            "Domain\\": "./src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Domain\\Test\\": "./test/"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "DOF\\HTTP\\Composer::postInstallCMD",
+            "DOF\\CLI\\Composer::postInstallCMD"
+        ],
+        "post-update-cmd": [
+            "DOF\\HTTP\\Composer::postUpdateCMD",
+            "DOF\\CLI\\Composer::postUpdateCMD"
+        ]
+    },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": {
-    }
+    "prefer-stable": true
 }

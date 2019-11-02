@@ -1,45 +1,18 @@
-/* Composer */
-vendor/
+/**/vendor/
 
-/* Vim  */
-/**/.php_cs.cache
-/**/.tags
-/**/*.swp
-
-/* Dof Framework */
-var/
-/**/config/*.php
-/**/config/*.yml
-/**/config/*.yaml
-/**/config/*.xml
-/**/config/*.json
-/**/config/*.ini
-/**/config/*.key
-!/**/config/domain.php
-!/**/config/framework.php
+/**/etc/
+/**/var/
+/**/tmp/
 /**/*.log
 /**/*.cache
 /**/*.compile
-/**/__domain__/*.php
-!/**/__domain__/domain.php
-/**/__domain__/*.yml
-/**/__domain__/*.yaml
-/**/__domain__/*.xml
-/**/__domain__/*.json
-/**/__domain__/*.ini
-/**/__domain__/*.key
+!/**/*.sample.php
 !/**/.gitkeep
 !/**/.vcskeep
-!/**/*.sample.php
-!/**/*.sample.yml
-!/**/*.sample.yaml
-!/**/*.sample.xml
-!/**/*.sample.json
-!/**/*.sample.ini
-!/**/*.sample.key
-.LOCK.WEB.DOF
 
-/* Others */
-tmp/
-/**/node_modules/
+/**/.php_cs.cache
+/**/*.tags
+/**/*.swp
+
 /**/php.errors
+/**/node_modules/
