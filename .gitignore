@@ -1,4 +1,6 @@
 /**/vendor/
+# comment composer.lock for production
+/**/composer.lock
 
 /**/etc/
 /**/var/
@@ -9,6 +11,8 @@
 !/**/*.sample.php
 !/**/.gitkeep
 !/**/.vcskeep
+
+/**/.DOF.HTTP.LOCK
 
 /**/.php_cs.cache
 /**/*.tags
