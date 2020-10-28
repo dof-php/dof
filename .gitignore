@@ -5,6 +5,7 @@
 /**/etc/
 /**/var/
 /**/tmp/
+/**/log-*/
 /**/*.log
 /**/*.cache
 /**/*.compile
