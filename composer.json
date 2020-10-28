@@ -28,14 +28,31 @@
             "Domain\\Test\\": "./test/"
         }
     },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
     "scripts": {
         "post-install-cmd": [
             "DOF\\HTTP\\Composer::postInstallCMD",
-            "DOF\\CLI\\Composer::postInstallCMD"
+            "DOF\\CLI\\Composer::postInstallCMD",
+            "@php dof vendor.install --all --ascii"
         ],
         "post-update-cmd": [
             "DOF\\HTTP\\Composer::postUpdateCMD",
-            "DOF\\CLI\\Composer::postUpdateCMD"
+            "DOF\\CLI\\Composer::postUpdateCMD",
+            "@php dof vendor.update --all --ascii"
+        ],
+        "post-autoload-dump": [
+            "@php dof vendor.remove --all --ascii"
+            "@php dof vendor.update --all --ascii"
+        ],
+        "post-root-package-install": [
+            "@php dof tpl.env --force --ascii"
+        ],
+        "post-create-project-cmd": [
+            "@php dof tpl.domain --force --ascii"
         ]
     },
     "minimum-stability": "dev",
