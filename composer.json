@@ -45,7 +45,7 @@
             "@php dof vendor.update --all --ascii"
         ],
         "post-autoload-dump": [
-            "@php dof vendor.remove --all --ascii"
+            "@php dof vendor.remove --all --ascii",
             "@php dof vendor.update --all --ascii"
         ],
         "post-root-package-install": [
